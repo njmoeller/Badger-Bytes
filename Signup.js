@@ -3,7 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, Image, TextInput } from 'react-native';
 import Input from './Input.js'
 
-export default function App() {
+export default function Signup() {
   return (
     <View style={styles.container}>
 
