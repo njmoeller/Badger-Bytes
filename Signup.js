@@ -3,32 +3,37 @@ import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, Image, TextInput } from 'react-native';
 import Input from './Input.js'
 
-export default function Signup() {
-  return (
-    <View style={styles.container}>
+export default class Signup extends React.Component {
+  static navigationOptions = {
+    title: 'Signup',
+  };
+  render() {
+    return (
+        <View style={styles.container}>
 
-      <View style={styles.carContainer}>
+          <View style={styles.carContainer}>
 
-        <ImageBackground 
-          source={require('./assets/HomeScreen.png')}
-          style={styles.image}
-        />
+            <ImageBackground
+                source={require('./assets/HomeScreen.png')}
+                style={styles.image}
+            />
 
-        <View style={styles.titles}>
-          <Text style={styles.title}>Badger Bytes</Text>
-          <Text style={styles.subtitle}>Delicious!</Text>
+            <View style={styles.titles}>
+              <Text style={styles.title}>Badger Bytes</Text>
+              <Text style={styles.subtitle}>Delicious!</Text>
+            </View>
+
+            <View style={styles.importantText}>
+              <Text style={styles.instruction}>Sign Up!</Text>
+            </View>
+
+            <Input/>
+
+          </View>
+          <StatusBar style="auto" />
         </View>
-
-        <View style={styles.importantText}>
-          <Text style={styles.instruction}>Sign Up!</Text>
-        </View>
-
-        <Input/>
-
-      </View>
-      <StatusBar style="auto" />
-    </View>
-  );
+    );
+  }
 }
 
 
