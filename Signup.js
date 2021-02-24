@@ -1,12 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, Image, TextInput } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground } from 'react-native';
 import Input from './Input.js'
 
 export default class Signup extends React.Component {
-  static navigationOptions = {
-    title: 'Signup',
-  };
   render() {
     return (
         <View style={styles.container}>

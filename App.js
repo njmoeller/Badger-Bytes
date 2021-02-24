@@ -1,7 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground, Image, ProgressViewIOSComponent } from 'react-native';
-import ButtonWithBackground from './button.js';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from "./Home";
