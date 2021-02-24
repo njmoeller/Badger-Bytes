@@ -4,9 +4,6 @@ import ButtonWithBackground from "./button";
 import {StatusBar} from "expo-status-bar";
 
 class Home extends React.Component {
-    static navigationOptions = {
-        title: 'Home',
-    };
     render() {
         const { navigate } = this.props.navigation;
         return (
