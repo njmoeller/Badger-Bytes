@@ -20,7 +20,7 @@ export default class Signup extends React.Component {
 
             <View style={styles.titles}>
               <Text style={styles.title}>Badger Bytes</Text>
-              <Text style={styles.subtitle}>Delicious!</Text>
+              <Text style={styles.subtitle}>Get Your Grub On</Text>
             </View>
 
             <View style={styles.importantText}>
@@ -51,9 +51,10 @@ const styles = StyleSheet.create({
   },
 
   titles: {
-    marginTop: '30%',
+    marginTop: '10%',
     width: '100%',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: 'white'
   },
 
   title: {
@@ -84,7 +85,8 @@ const styles = StyleSheet.create({
   instruction: {
     fontSize: 30,
     fontWeight: '700',
-    color: '#d12a3b'
+    color: 'white',
+    marginTop: 27
   }
 
 

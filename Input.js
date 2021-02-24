@@ -54,32 +54,32 @@ class Inputs extends Component {
     render() {
         return (
             <View style={styles.container}>
-                <ActivityIndicator size="large" color="#FF0000" animating={this.state.shouldShowActivityIndicator}/>
+                <ActivityIndicator size='large' color="#FFFFFF" animating={this.state.shouldShowActivityIndicator}/>
                 <TextInput style={styles.input}
                            underlineColorAndroid="transparent"
                            placeholder="Username"
-                           placeholderTextColor="#d12a3b"
+                           placeholderTextColor="white"
                            autoCapitalize="none"
                            onChangeText={this.handleUsername}/>
 
                 <TextInput style={styles.input}
                            underlineColorAndroid="transparent"
                            placeholder="Password"
-                           placeholderTextColor="#d12a3b"
+                           placeholderTextColor="white"
                            autoCapitalize="none"
                            onChangeText={this.handlePassword}/>
 
                 <TextInput style={styles.input}
                            underlineColorAndroid="transparent"
                            placeholder="Phone Number"
-                           placeholderTextColor="#d12a3b"
+                           placeholderTextColor="white"
                            autoCapitalize="none"
                            onChangeText={this.handlePhone}/>
 
                 <TextInput style={styles.input}
                            underlineColorAndroid="transparent"
                            placeholder="Address"
-                           placeholderTextColor="#d12a3b"
+                           placeholderTextColor="white"
                            autoCapitalize="none"
                            onChangeText={this.handleAddress}/>
 
@@ -99,23 +99,30 @@ export default Inputs
 
 const styles = StyleSheet.create({
     container: {
-        paddingTop: 23
+        paddingTop: 5
     },
     input: {
-        margin: 15,
-        height: 40,
+        margin: 10,
+        height: 60,
         borderColor: '#d12a3b',
-        borderWidth: 1,
-        textAlign: 'center'
+        borderWidth: 8,
+        textAlign: 'center',
+        fontSize: 23,
+        fontWeight: '800'
+        
     },
     submitButton: {
         backgroundColor: '#d12a3b',
         padding: 10,
         margin: 15,
-        height: 40,
+        height: 50,
+        borderRadius: 36,
+        
     },
     submitButtonText: {
         color: 'white',
-        textAlign: 'center'
+        textAlign: 'center',
+        fontSize: 23,
+        fontWeight: '800'
     }
 })
