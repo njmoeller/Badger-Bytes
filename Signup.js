@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, ScrollView } from 'react-native';
 import Input from './Input.js'
 
 export default class Signup extends React.Component {
   render() {
     return (
+      <ScrollView>
         <View style={styles.container}>
 
           <View style={styles.carContainer}>
@@ -29,6 +30,7 @@ export default class Signup extends React.Component {
           </View>
           <StatusBar style="auto" />
         </View>
+      </ScrollView>
     );
   }
 }
@@ -74,7 +76,7 @@ const styles = StyleSheet.create({
   },
 
   importantText: {
-    marginTop: '10%',
+    marginTop: '5%',
     width: '100%',
     alignItems: 'center'
   },
