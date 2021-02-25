@@ -16,6 +16,11 @@ class Cart extends React.Component {
                         style={styles.image}
                     />
 
+                    <View style={styles.titles}>
+                        <Text style={styles.title}>Badger Bytes</Text>
+                        <Text style={styles.subtitle}>Get Your Grub On</Text>
+                    </View>          
+
                     <ScrollView>
                         {
                             this.props.route.params.cart.map((item, index) => (
@@ -26,11 +31,11 @@ class Cart extends React.Component {
                                 </View>
                             ))
                         }
-                    </ScrollView>
+                        <View style={styles.button1}>
+                            <ButtonWithBackground onPress={() => {navigate('Checkout', { cart: this.props.route.params.cart })}} text='Checkout' color='#d12a3b' />
+                        </View>
 
-                    <View style={styles.button1}>
-                        <ButtonWithBackground onPress={() => {navigate('Checkout', { cart: this.props.route.params.cart })}} text='Checkout' color='#d12a3b' />
-                    </View>
+                    </ScrollView>
 
 
                 </View>
@@ -63,8 +68,28 @@ const styles = StyleSheet.create({
         height: '100%',
     },
 
+    titles: {
+       // marginTop: '10%',
+        width: '100%',
+        alignItems: 'center',
+        backgroundColor: '#d12a3b'
+    },
+
+    title: {
+        fontSize: 35,
+        fontWeight: '700',
+        color: 'white',
+        textAlign: 'center'
+    },
+
+    subtitle: {
+        fontSize: 16,
+        color: 'white',
+        fontWeight: '700'
+    },
+
     button1: {
-        marginTop: '40%',
+        marginTop: '20%',
         alignItems: 'center',
     },
 

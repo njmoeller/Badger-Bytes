@@ -74,6 +74,12 @@ class Menu extends React.Component {
                         source={require('./assets/HomeScreen.png')}
                         style={styles.image}
                     />
+
+                    <View style={styles.titles}>
+                        <Text style={styles.title}>Badger Bytes</Text>
+                        <Text style={styles.subtitle}>Get Your Grub On</Text>
+                    </View>      
+                    
                     <ScrollView>
                         {
                             this.state.names.map((item, index) => (
@@ -134,5 +140,25 @@ const styles = StyleSheet.create({
         marginBottom: '10%',
         alignItems: 'center',
     },
+
+    titles: {
+        // marginTop: '10%',
+         width: '100%',
+         alignItems: 'center',
+         backgroundColor: '#d12a3b'
+     },
+ 
+     title: {
+         fontSize: 35,
+         fontWeight: '700',
+         color: 'white',
+         textAlign: 'center'
+     },
+ 
+     subtitle: {
+         fontSize: 16,
+         color: 'white',
+         fontWeight: '700'
+     },
 
 });

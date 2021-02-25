@@ -50,21 +50,21 @@ const styles = StyleSheet.create({
   },
 
   titles: {
-    marginTop: '10%',
+    //marginTop: '10%',
     width: '100%',
     alignItems: 'center',
-    backgroundColor: 'white'
+    backgroundColor: '#d12a3b'
   },
 
   title: {
     fontSize: 40,
     fontWeight: '700',
-    color: '#d12a3b'
+    color: 'white'
   },
   
   subtitle: {
     fontSize: 16,
-    color: '#d12a3b',
+    color: 'white',
     fontWeight: '700'
   },
 

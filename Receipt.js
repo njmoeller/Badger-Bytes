@@ -73,26 +73,26 @@ const styles = StyleSheet.create({
 
     scrollContainer: {
         width: '100%',
-        height: '100%',
+        height: '60%',
     },
 
     titles: {
-        marginTop: '10%',
+        //marginTop: '10%',
         width: '100%',
         alignItems: 'center',
-        backgroundColor: 'white'
+        backgroundColor: '#d12a3b'
     },
 
     title: {
         fontSize: 35,
         fontWeight: '700',
-        color: '#d12a3b',
+        color: 'white',
         textAlign: 'center'
     },
 
     subtitle: {
         fontSize: 16,
-        color: '#d12a3b',
+        color: 'white',
         fontWeight: '700'
       },
 

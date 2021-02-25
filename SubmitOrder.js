@@ -20,6 +20,7 @@ class SubmitOrder extends React.Component {
                     <ScrollView>
                         <View style={styles.titles}>
                             <Text style={styles.title}>Badger Bytes</Text>
+                            <Text style={styles.subtitle}>Get Your Grub On</Text>
                         </View>
 
                         <View style={styles.importantText}>
@@ -52,17 +53,23 @@ const styles = StyleSheet.create({
     },
 
     titles: {
-        marginTop: '30%',
+        //marginTop: '10%',
         width: '100%',
         alignItems: 'center',
-        backgroundColor: 'white'
+        backgroundColor: '#d12a3b'
     },
 
     title: {
         fontSize: 35,
         fontWeight: '700',
-        color: '#d12a3b',
+        color: 'white',
         textAlign: 'center'
+    },
+
+    subtitle: {
+        fontSize: 16,
+        color: 'white',
+        fontWeight: '700'
     },
 
     image: {
