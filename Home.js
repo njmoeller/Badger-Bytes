@@ -1,5 +1,5 @@
 import React from 'react';
-import {ImageBackground, StyleSheet, Text, View} from "react-native";
+import {ImageBackground, StyleSheet, Text, View, Image} from "react-native";
 import ButtonWithBackground from "./button";
 import {StatusBar} from "expo-status-bar";
 
@@ -20,6 +20,11 @@ class Home extends React.Component {
                         <Text style={styles.title}>Badger Bytes</Text>
                         <Text style={styles.subtitle}>Get Your Grub On</Text>
                     </View>
+
+                    <Image
+                        source={require('./assets/UW-MadisonCrest.png')}
+                        style={styles.crest}
+                    />
 
 
                     <View style={styles.button1}>
@@ -53,7 +58,7 @@ const styles = StyleSheet.create({
     },
 
     button1: {
-        marginTop: '40%',
+        marginTop: '10%',
         alignItems: 'center',
     },
 
@@ -64,21 +69,21 @@ const styles = StyleSheet.create({
     },
 
     titles: {
-        marginTop: '30%',
+        marginTop: '22%',
         width: '100%',
         alignItems: 'center',
-        backgroundColor: 'white'
+        backgroundColor: '#d12a3b'
     },
 
     title: {
         fontSize: 40,
         fontWeight: '700',
-        color: '#d12a3b'
+        color: 'white'
     },
 
     subtitle: {
         fontSize: 16,
-        color: '#d12a3b',
+        color: 'white',
         fontWeight: '700'
     },
 
@@ -87,6 +92,15 @@ const styles = StyleSheet.create({
         height: '100%',
         resizeMode: 'cover',
         position: 'absolute',
+    },
+
+    crest: {
+        width: '100%',
+        height: '20%',
+        resizeMode: 'contain',
+        marginTop: '10%'
+        //position: 'absolute',
+
     }
 
 });
