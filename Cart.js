@@ -20,8 +20,8 @@ class Cart extends React.Component {
                         {
                             this.props.route.params.cart.map((item, index) => (
                                 <View key = {index} style = {styles.item}>
-                                    <Text>{item.name}</Text>
-                                    <Text>{'$' + item.price}</Text>
+                                    <Text style={{fontSize: 20, fontWeight: '600'}}>{item.name}</Text>
+                                    <Text style={{fontSize: 20, fontWeight: '600'}}>{'$' + item.price}</Text>
                                     <Image source={{uri: item.imageURL}} style= {{ height:100, width: 100 }} />
                                 </View>
                             ))

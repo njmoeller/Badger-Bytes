@@ -79,8 +79,8 @@ class Menu extends React.Component {
                             this.state.names.map((item, index) => (
                                 <View key = {item.name} style = {styles.item}>
                                     <View>
-                                        <Text>{item.name}</Text>
-                                        <Text>{'$' + item.price}</Text>
+                                        <Text style={{fontSize: 20, fontWeight: '600'}}>{item.name}</Text>
+                                        <Text style={{fontSize: 15, fontWeight: '600'}}>{'$' + item.price}</Text>
                                         <Image source={{uri: item.imageURL}} style= {{ height:100, width: 100 }} />
                                     </View>
                                     <View>
