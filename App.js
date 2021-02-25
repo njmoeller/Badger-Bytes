@@ -3,7 +3,11 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from "./Home";
 import Signup from "./Signup";
+<<<<<<< Updated upstream
 import Login from './Login';
+=======
+import Menu from "./Menu";
+>>>>>>> Stashed changes
 
 const Stack = createStackNavigator();
 
@@ -14,6 +18,7 @@ export default function App() {
           <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
           <Stack.Screen name="Signup" component={Signup} options={{ headerShown: true }} />
           <Stack.Screen name="Login" component={Login} options={{ headerShown: true }} />
+          <Stack.Screen name="Menu" component={Menu} options={{ headerShown: false }} />
         </Stack.Navigator>
       </NavigationContainer>
   );

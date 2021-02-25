@@ -24,7 +24,7 @@ export default class Signup extends React.Component {
               <Text style={styles.instruction}>Sign Up!</Text>
             </View>
 
-            <Input/>
+            <Input navigation={this.props.navigation}/>
 
           </View>
           <StatusBar style="auto" />

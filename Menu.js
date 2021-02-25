@@ -1,23 +1,52 @@
 import React from 'react';
-import {Text, StyleSheet, ScrollView, View, Image, ImageBackground} from "react-native";
+import {Text, StyleSheet, ScrollView, View, Image, ImageBackground, ActivityIndicator} from "react-native";
 import ButtonWithBackground from "./button";
+const client = require('./Utilities/client');
 
 
 class Menu extends React.Component {
     state = {
         names: [
-            {'name': 'Hamburger', 'price': 10, 'imageURL':
-                    'http://www.pngall.com/wp-content/uploads/5/Junk-Food-Hamburger-PNG-File.png', 'available': true},
-            {'name': 'Chicken', 'price': 5, 'imageURL':
-                    'https://www.ldoceonline.com/media/english/illustration/chicken.jpg', 'available': true},
-            {'name': 'Salad', 'price': 15, 'imageURL':
-                    'https://www.jessicagavin.com/wp-content/uploads/2019/07/caesar-salad-9-600x900.jpg', 'available': false},
-        ]
+        ],
+        shouldShowActivityIndicator: false
     };
+
+    removeActivityIndicator = () => {
+        this.setState({shouldShowActivityIndicator: false});
+    };
+
+    getMenuItems = () => {
+        this.setState({shouldShowActivityIndicator: true});
+        client.get('/api/menuItem/', {})
+            .then((response) => {
+                this.removeActivityIndicator();
+                let tempNames = [];
+                for(let i=0; i<response.data.length; i++) {
+                    let newFood = {
+                        "name": response.data[i].name,
+                        "price": response.data[i].price,
+                        "imageURL": response.data[i].imageURL,
+                        "available": response.data[i].available
+                    };
+                    tempNames.push(newFood)
+                }
+                this.setState({names: tempNames})
+            })
+            .catch((error) => {
+                this.removeActivityIndicator();
+                alert(error.response.data.message || 'Error getting menu items')
+            });
+    };
+
+    componentDidMount() {
+        this.setState({shouldShowActivityIndicator: true});
+        this.getMenuItems()
+    }
 
     render() {
         return(
             <View style={styles.view}>
+                <ActivityIndicator size='large' color="#FFFFFF" animating={this.state.shouldShowActivityIndicator}/>
                 <View style={styles.carContainer}>
                     <ImageBackground
                         source={require('./assets/HomeScreen.png')}
