@@ -23,7 +23,7 @@ class Home extends React.Component {
 
 
                     <View style={styles.button1}>
-                        <ButtonWithBackground text='Login' color='#d12a3b' />
+                        <ButtonWithBackground onPress={() => {navigate('Login')}} text='Login' color='#d12a3b' />
                     </View>
 
                     <View style={styles.button2}>
