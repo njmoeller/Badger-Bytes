@@ -3,11 +3,8 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Home from "./Home";
 import Signup from "./Signup";
-<<<<<<< Updated upstream
 import Login from './Login';
-=======
 import Menu from "./Menu";
->>>>>>> Stashed changes
 
 const Stack = createStackNavigator();
 
