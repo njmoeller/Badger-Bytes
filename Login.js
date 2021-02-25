@@ -24,7 +24,7 @@ export default class Login extends React.Component {
               <Text style={styles.instruction}>Login</Text>
             </View>
 
-            <InputLogin/>
+            <InputLogin navigation={this.props.navigation}/>
 
           </View>
           <StatusBar style="auto" />

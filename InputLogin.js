@@ -22,21 +22,25 @@ class InputLogin extends Component {
         this.setState({shouldShowActivityIndicator: false});
     };
 
+    navigateToMenu = () => {
+        this.props.navigation.navigate("Menu");
+    };
+
     login = (username) => {
         this.setState({shouldShowActivityIndicator: true});
-        client.post('/api/users', {
+        client.post('/api/users/login', {
             username: this.state.username, pass: this.state.password
         })
             .then((response) => {
                 this.removeActivityIndicator();
-                alert('User with username: ' + username + 'successfully created in database')
+                this.navigateToMenu();
 
                 // At this point, we will want to move the user to the main part of the app
                 // Not sure how to change screens in react native but I'm sure we'll figure it out
             })
             .catch((error) => {
                 this.removeActivityIndicator();
-                alert(error.response.data.message || 'Error creating user with username: ' + username)
+                alert(error.response.data.message || 'Error logging in user with username: ' + username)
             });
     };
 
