@@ -3,11 +3,11 @@ import {ImageBackground, StyleSheet, Text, View, ScrollView, Image} from "react-
 import {StatusBar} from "expo-status-bar";
 
 class Receipt extends React.Component {
+
+
     moveToSubmitOrder = () => {
         this.props.navigation.navigate('SubmitOrder', { cart: this.props.route.params.cart })
     };
-
-    totalOrder = this.cos
 
 
     render() {
@@ -44,7 +44,7 @@ class Receipt extends React.Component {
                                 ))
                             }
                         <View style={styles.receiptContainer}>
-                            <Text style={styles.receipt}>Total Amount: </Text>
+                            <Text style={styles.receipt}>Total Amount: </Text> 
                             <Text style={styles.receipt}>Payment Method: </Text>
 
                         </View>
@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
 
     receiptContainer: {
         width: '100%',
-        height: '100%',
+        height: '20%',
         backgroundColor: 'white'
     },
 
