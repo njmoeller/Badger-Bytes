@@ -8,7 +8,7 @@ const ButtonWithBackground = props => {
         </View>
     )
 
-    return<TouchableOpacity onPress={props.onPress}>{content}</TouchableOpacity>
+    return<TouchableOpacity disabled={props.disabled || false} onPress={props.onPress}>{content}</TouchableOpacity>
 }
 
 const styles = StyleSheet.create({

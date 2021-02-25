@@ -1,5 +1,5 @@
 import React from 'react';
-import {ImageBackground, StyleSheet, Text, View} from "react-native";
+import {Image, ImageBackground, ScrollView, StyleSheet, Text, View} from "react-native";
 import ButtonWithBackground from "./button";
 import {StatusBar} from "expo-status-bar";
 
@@ -16,7 +16,17 @@ class Cart extends React.Component {
                         style={styles.image}
                     />
 
-                    {/*List of Items in your cart go here*/}
+                    <ScrollView>
+                        {
+                            this.props.route.params.cart.map((item, index) => (
+                                <View key = {index} style = {styles.item}>
+                                    <Text>{item.name}</Text>
+                                    <Text>{'$' + item.price}</Text>
+                                    <Image source={{uri: item.imageURL}} style= {{ height:100, width: 100 }} />
+                                </View>
+                            ))
+                        }
+                    </ScrollView>
 
                     <View style={styles.button1}>
                         <ButtonWithBackground onPress={() => {navigate('Checkout')}} text='Checkout' color='#d12a3b' />
@@ -31,6 +41,16 @@ class Cart extends React.Component {
 }
 
 const styles = StyleSheet.create({
+    item: {
+        flexDirection: 'row',
+        justifyContent: 'space-between',
+        alignItems: 'center',
+        padding: 30,
+        margin: 2,
+        borderColor: '#2a4944',
+        borderWidth: 1,
+        backgroundColor: '#d2f7f1'
+    },
     container: {
         flex: 1,
         backgroundColor: '#fff',

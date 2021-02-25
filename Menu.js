@@ -8,6 +8,9 @@ class Menu extends React.Component {
     state = {
         names: [
         ],
+        cart: [
+
+        ],
         shouldShowActivityIndicator: false
     };
 
@@ -26,7 +29,8 @@ class Menu extends React.Component {
                         "name": response.data[i].name,
                         "price": response.data[i].price,
                         "imageURL": response.data[i].imageURL,
-                        "available": response.data[i].available
+                        "available": response.data[i].available,
+                        "_id": response.data[i]._id
                     };
                     tempNames.push(newFood)
                 }
@@ -36,6 +40,23 @@ class Menu extends React.Component {
                 this.removeActivityIndicator();
                 alert(error.response.data.message || 'Error getting menu items')
             });
+    };
+
+    addItemToCart = (itemName) => {
+        let itemToAdd = {};
+        for(let i=0; i<this.state.names.length; i++) {
+            if(this.state.names[i].name === itemName) {
+                itemToAdd = this.state.names[i];
+            }
+        }
+        let currCart = this.state.cart;
+        currCart.push(itemToAdd);
+        this.setState({cart: currCart});
+        alert(itemName + " successfully added to cart.")
+    };
+
+    moveToCart = (navigate) => {
+        navigate('Cart', {cart: this.state.cart});
     };
 
     componentDidMount() {
@@ -53,27 +74,25 @@ class Menu extends React.Component {
                         source={require('./assets/HomeScreen.png')}
                         style={styles.image}
                     />
-                    <View style={styles.marginView}>
-                        <ScrollView>
-                            {
-                                this.state.names.map((item, index) => (
-                                    <View key = {item.name} style = {styles.item}>
-                                        <View>
-                                            <Text>{item.name}</Text>
-                                            <Text>{'$' + item.price}</Text>
-                                            <Image source={{uri: item.imageURL}} style= {{ height:100, width: 100 }} />
-                                        </View>
-                                        <View>
-                                            <ButtonWithBackground text={item.available ? "Add to Cart" : "Unavailable"} color={item.available ? "#d12a3b": "#808080"} />
-                                        </View>
+                    <ScrollView>
+                        {
+                            this.state.names.map((item, index) => (
+                                <View key = {item.name} style = {styles.item}>
+                                    <View>
+                                        <Text>{item.name}</Text>
+                                        <Text>{'$' + item.price}</Text>
+                                        <Image source={{uri: item.imageURL}} style= {{ height:100, width: 100 }} />
                                     </View>
-                                ))
-                            }
-                            <View style={styles.cart}>
-                                <ButtonWithBackground onPress={() => {navigate('Cart')}} text='Go to Cart' color='#d12a3b' />
-                            </View>
-                        </ScrollView>
-                    </View>
+                                    <View>
+                                        <ButtonWithBackground onPress={() => this.addItemToCart(item.name)} disabled={!item.available} text={item.available ? "Add to Cart" : "Unavailable"} color={item.available ? "#d12a3b": "#808080"} />
+                                    </View>
+                                </View>
+                            ))
+                        }
+                        <View style={styles.cart}>
+                            <ButtonWithBackground onPress={() => this.moveToCart(navigate)} text='Go to Cart' color='#d12a3b' />
+                        </View>
+                    </ScrollView>
                 </View>
             </View>
         );
@@ -98,9 +117,6 @@ const styles = StyleSheet.create({
         backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
-    },
-    marginView: {
-        marginTop: 50
     },
     image: {
         width: '100%',
