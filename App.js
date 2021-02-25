@@ -5,6 +5,8 @@ import Home from "./Home";
 import Signup from "./Signup";
 import Login from './Login';
 import Menu from "./Menu";
+import Cart from "./Cart";
+import Checkout from "./Checkout";
 
 const Stack = createStackNavigator();
 
@@ -16,6 +18,8 @@ export default function App() {
           <Stack.Screen name="Signup" component={Signup} options={{ headerShown: true }} />
           <Stack.Screen name="Login" component={Login} options={{ headerShown: true }} />
           <Stack.Screen name="Menu" component={Menu} options={{ headerShown: false }} />
+          <Stack.Screen name="Cart" component={Cart} options={{ headerShown: false }} />
+          <Stack.Screen name="Checkout" component={Checkout} options={{ headerShown: false }} />
         </Stack.Navigator>
       </NavigationContainer>
   );

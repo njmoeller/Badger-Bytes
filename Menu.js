@@ -44,6 +44,7 @@ class Menu extends React.Component {
     }
 
     render() {
+        const { navigate } = this.props.navigation;
         return(
             <View style={styles.view}>
                 <ActivityIndicator size='large' color="#FFFFFF" animating={this.state.shouldShowActivityIndicator}/>
@@ -68,6 +69,9 @@ class Menu extends React.Component {
                                     </View>
                                 ))
                             }
+                            <View style={styles.cart}>
+                                <ButtonWithBackground onPress={() => {navigate('Cart')}} text='Go to Cart' color='#d12a3b' />
+                            </View>
                         </ScrollView>
                     </View>
                 </View>
@@ -107,6 +111,12 @@ const styles = StyleSheet.create({
     carContainer: {
         width: '100%',
         height: '100%',
+    },
+
+    cart: {
+        marginTop: '5%',
+        marginBottom: '10%',
+        alignItems: 'center',
     },
 
 });
