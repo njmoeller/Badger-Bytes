@@ -64,6 +64,7 @@ class Inputs extends Component {
                            placeholder="Username"
                            placeholderTextColor="white"
                            autoCapitalize="none"
+                           color= "white"
                            onChangeText={this.handleUsername}/>
 
                 <TextInput style={styles.input}
@@ -71,6 +72,7 @@ class Inputs extends Component {
                            placeholder="Password"
                            placeholderTextColor="white"
                            autoCapitalize="none"
+                           color= "white"
                            onChangeText={this.handlePassword}/>
 
                 <TextInput style={styles.input}
@@ -78,6 +80,7 @@ class Inputs extends Component {
                            placeholder="Phone Number"
                            placeholderTextColor="white"
                            autoCapitalize="none"
+                           color= "white"
                            onChangeText={this.handlePhone}/>
 
                 <TextInput style={styles.input}
@@ -85,6 +88,7 @@ class Inputs extends Component {
                            placeholder="Address"
                            placeholderTextColor="white"
                            autoCapitalize="none"
+                           color= "white"
                            onChangeText={this.handleAddress}/>
 
                 <TouchableOpacity

@@ -53,6 +53,7 @@ class InputLogin extends Component {
                            placeholder="Username"
                            placeholderTextColor="white"
                            autoCapitalize="none"
+                           color= "white"
                            onChangeText={this.handleUsername}/>
 
                 <TextInput style={styles.input}
@@ -60,6 +61,7 @@ class InputLogin extends Component {
                            placeholder="Password"
                            placeholderTextColor="white"
                            autoCapitalize="none"
+                           color= "white"
                            onChangeText={this.handlePassword}/>
 
                 <TouchableOpacity
