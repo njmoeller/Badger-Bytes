@@ -21,8 +21,14 @@ class Checkout extends React.Component {
                     />
 
                     <View style={styles.titles}>
-                        <Text style={styles.title}>Choose Your Payment Method</Text>
+                        <Text style={styles.title}>Badger Bytes</Text>
+                        <Text style={styles.subtitle}>Get Your Grub On</Text>
                     </View>
+
+                    <View style={styles.importantText}>
+                        <Text style={styles.instruction}>Select Your Payment Method</Text>
+                    </View>
+
 
                     <View style={styles.buttons}>
                         <ButtonWithBackground onPress={() => this.moveToSubmitOrder()} text='Credit Card' color='#d12a3b' />
@@ -72,7 +78,7 @@ const styles = StyleSheet.create({
     },
 
     titles: {
-        marginTop: '30%',
+        marginTop: '10%',
         width: '100%',
         alignItems: 'center',
         backgroundColor: 'white'
@@ -85,12 +91,32 @@ const styles = StyleSheet.create({
         textAlign: 'center'
     },
 
+    subtitle: {
+        fontSize: 16,
+        color: '#d12a3b',
+        fontWeight: '700'
+      },
+
     image: {
         width: '100%',
         height: '100%',
         resizeMode: 'cover',
         position: 'absolute',
-    }
+    },
+
+    importantText: {
+        marginTop: '5%',
+        width: '100%',
+        alignItems: 'center'
+      },
+    
+    instruction: {
+        fontSize: 25,
+        fontWeight: '700',
+        color: 'white',
+        marginTop: 27
+      }
+
 
 });
 
