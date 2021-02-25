@@ -8,6 +8,7 @@ import Menu from "./Menu";
 import Cart from "./Cart";
 import Checkout from "./Checkout";
 import SubmitOrder from "./SubmitOrder";
+import Receipt from './Receipt';
 
 const Stack = createStackNavigator();
 
@@ -22,6 +23,7 @@ export default function App() {
           <Stack.Screen name="Cart" component={Cart} options={{ headerShown: true }} />
           <Stack.Screen name="Checkout" component={Checkout} options={{ headerShown: true  }} />
           <Stack.Screen name="SubmitOrder" component={SubmitOrder} options={{ headerShown: true  }} />
+          <Stack.Screen name="Receipt" component={Receipt} options={{ headerShown: true  }} />
         </Stack.Navigator>
       </NavigationContainer>
   );

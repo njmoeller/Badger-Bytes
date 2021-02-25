@@ -32,8 +32,8 @@ class InputSubmitOrder extends Component {
         this.setState({shouldShowActivityIndicator: false});
     };
 
-    navigateToMenu = () => {
-        this.props.navigation.navigate("Menu");
+    navigateToReceipt = () => {
+        this.props.navigation.navigate("Receipt", {cart: this.props.cart});
     };
 
     login = () => {
@@ -53,7 +53,7 @@ class InputSubmitOrder extends Component {
                 })
                     .then((response) => {
                         this.removeActivityIndicator();
-                        // this.navigateToMenu();
+                        this.navigateToReceipt();
                         alert('Successfully added order to database');
                     })
                     .catch((error) => {
