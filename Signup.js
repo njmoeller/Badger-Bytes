@@ -6,16 +6,16 @@ import Input from './Input.js'
 export default class Signup extends React.Component {
   render() {
     return (
-      <ScrollView>
-        <View style={styles.container}>
+      <View style={styles.container}>
 
-          <View style={styles.carContainer}>
+        <View style={styles.carContainer}>
 
-            <ImageBackground
-                source={require('./assets/HomeScreen.png')}
-                style={styles.image}
-            />
-
+          <ImageBackground
+              source={require('./assets/HomeScreen.png')}
+              style={styles.image}
+          />
+          <ScrollView>
+            
             <View style={styles.titles}>
               <Text style={styles.title}>Badger Bytes</Text>
               <Text style={styles.subtitle}>Get Your Grub On</Text>
@@ -27,10 +27,12 @@ export default class Signup extends React.Component {
 
             <Input navigation={this.props.navigation}/>
 
-          </View>
-          <StatusBar style="auto" />
+          </ScrollView>
+          
         </View>
-      </ScrollView>
+        <StatusBar style="auto" />
+      </View>
+     
     );
   }
 }
@@ -50,21 +52,21 @@ const styles = StyleSheet.create({
   },
 
   titles: {
-    marginTop: '10%',
+    //marginTop: '10%',
     width: '100%',
     alignItems: 'center',
-    backgroundColor: 'white'
+    backgroundColor: '#d12a3b'
   },
 
   title: {
     fontSize: 40,
     fontWeight: '700',
-    color: '#d12a3b'
+    color: 'white'
   },
   
   subtitle: {
     fontSize: 16,
-    color: '#d12a3b',
+    color: 'white',
     fontWeight: '700'
   },
 
