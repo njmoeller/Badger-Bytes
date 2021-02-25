@@ -29,7 +29,7 @@ class Cart extends React.Component {
                     </ScrollView>
 
                     <View style={styles.button1}>
-                        <ButtonWithBackground onPress={() => {navigate('Checkout')}} text='Checkout' color='#d12a3b' />
+                        <ButtonWithBackground onPress={() => {navigate('Checkout', { cart: this.props.route.params.cart })}} text='Checkout' color='#d12a3b' />
                     </View>
 
 

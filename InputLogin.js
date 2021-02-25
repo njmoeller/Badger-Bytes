@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {ActivityIndicator, View, Text, TouchableOpacity, TextInput, StyleSheet} from 'react-native'
+import {ActivityIndicator, View, Text, TouchableOpacity, TextInput, StyleSheet, AsyncStorage} from 'react-native'
 
 const client = require('./Utilities/client');
 
@@ -9,6 +9,14 @@ class InputLogin extends Component {
         password: '',
         shouldShowActivityIndicator: false
     };
+
+    static async storeUsername(username) {
+        try {
+            await AsyncStorage.setItem("username", username);
+        } catch (error) {
+            alert("Something went wrong")
+        }
+    }
 
     handleUsername = (text) => {
         this.setState({username: text})
@@ -33,7 +41,11 @@ class InputLogin extends Component {
         })
             .then((response) => {
                 this.removeActivityIndicator();
-                this.navigateToMenu();
+
+                InputLogin.storeUsername(this.state.username)
+                    .then(() => {
+                        this.navigateToMenu();
+                    });
 
                 // At this point, we will want to move the user to the main part of the app
                 // Not sure how to change screens in react native but I'm sure we'll figure it out
