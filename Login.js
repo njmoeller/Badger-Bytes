@@ -1,11 +1,12 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View, ImageBackground } from 'react-native';
+import { StyleSheet, Text, View, ImageBackground, ScrollView, FlatList } from 'react-native';
 import InputLogin from './InputLogin.js'
 
 export default class Login extends React.Component {
   render() {
     return (
+      
         <View style={styles.container}>
 
           <View style={styles.carContainer}>
@@ -14,21 +15,22 @@ export default class Login extends React.Component {
                 source={require('./assets/HomeScreen.png')}
                 style={styles.image}
             />
+            <ScrollView>
+              <View style={styles.titles}>
+                <Text style={styles.title}>Badger Bytes</Text>
+                <Text style={styles.subtitle}>Get Your Grub On</Text>
+              </View>
 
-            <View style={styles.titles}>
-              <Text style={styles.title}>Badger Bytes</Text>
-              <Text style={styles.subtitle}>Get Your Grub On</Text>
-            </View>
-
-            <View style={styles.importantText}>
-              <Text style={styles.instruction}>Login</Text>
-            </View>
-
-            <InputLogin navigation={this.props.navigation}/>
-
+              <View style={styles.importantText}>
+                <Text style={styles.instruction}>Login</Text>
+              </View>
+              
+              <InputLogin navigation={this.props.navigation}/>
+            </ScrollView>
           </View>
           <StatusBar style="auto" />
         </View>
+      
     );
   }
 }
@@ -70,7 +72,7 @@ const styles = StyleSheet.create({
     width: '100%',
     height: '100%',
     resizeMode: 'cover',
-    position: 'absolute',
+    position: 'absolute'
   },
 
   importantText: {
