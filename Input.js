@@ -85,6 +85,7 @@ class Inputs extends Component {
                            placeholderTextColor="white"
                            autoCapitalize="none"
                            color= "white"
+                           secureTextEntry={true}
                            onChangeText={this.handlePassword}/>
 
                 <TextInput style={styles.input}
