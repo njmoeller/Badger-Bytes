@@ -1,2 +1,2 @@
 # Badger-Bytes
-Spike Exercise
+Check out master branch to see application
