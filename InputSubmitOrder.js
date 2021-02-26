@@ -57,7 +57,7 @@ class InputSubmitOrder extends Component {
                     .then((response) => {
                         this.removeActivityIndicator();
                         this.navigateToReceipt();
-                        alert('Successfully added order to database');
+                        alert('Thank You, Your Order Will Be Prepared Shortly');
                     })
                     .catch((error) => {
                         this.removeActivityIndicator();
