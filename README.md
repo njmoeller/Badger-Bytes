@@ -10,5 +10,3 @@ Run ```npm install expo```
 Run ```npm start``` to launch our app in the expo browser
 
 Run ```npm install react-gesture-recognizer --force``` if you run into issues with this particular dependency, and then compile again
-
-If you run int
