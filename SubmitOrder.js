@@ -27,7 +27,7 @@ class SubmitOrder extends React.Component {
                             <Text style={styles.instruction}>Submit Order</Text>
                         </View>
 
-                        <InputSubmitOrder navigation={this.props.navigation} cart={this.props.route.params.cart}/>
+                        <InputSubmitOrder navigation={this.props.navigation} cart={this.props.route.params.cart} paymentType={this.props.route.params.paymentType}/>
                     </ScrollView>
 
                 </View>

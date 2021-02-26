@@ -4,8 +4,8 @@ import ButtonWithBackground from "./button";
 import {StatusBar} from "expo-status-bar";
 
 class Checkout extends React.Component {
-    moveToSubmitOrder = () => {
-        this.props.navigation.navigate('SubmitOrder', { cart: this.props.route.params.cart })
+    moveToSubmitOrder = (paymentType) => {
+        this.props.navigation.navigate('SubmitOrder', { cart: this.props.route.params.cart, paymentType: paymentType })
     };
 
 
@@ -31,19 +31,19 @@ class Checkout extends React.Component {
 
 
                     <View style={styles.buttons}>
-                        <ButtonWithBackground onPress={() => this.moveToSubmitOrder()} text='Credit Card' color='#d12a3b' />
+                        <ButtonWithBackground onPress={() => this.moveToSubmitOrder("Credit Card")} text='Credit Card' color='#d12a3b' />
                     </View>
 
                     <View style={styles.buttons}>
-                        <ButtonWithBackground onPress={() => this.moveToSubmitOrder()} text='Paypal' color='#d12a3b' />
+                        <ButtonWithBackground onPress={() => this.moveToSubmitOrder("PayPal")} text='Paypal' color='#d12a3b' />
                     </View>
 
                     <View style={styles.buttons}>
-                        <ButtonWithBackground onPress={() => this.moveToSubmitOrder()} text='Stripe' color='#d12a3b' />
+                        <ButtonWithBackground onPress={() => this.moveToSubmitOrder("Stripe")} text='Stripe' color='#d12a3b' />
                     </View>
 
                     <View style={styles.buttons}>
-                        <ButtonWithBackground onPress={() => this.moveToSubmitOrder()} text='ApplePay' color='#d12a3b' />
+                        <ButtonWithBackground onPress={() => this.moveToSubmitOrder("ApplePay")} text='ApplePay' color='#d12a3b' />
                     </View>
 
                 </View>

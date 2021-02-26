@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {ActivityIndicator, View, Text, TouchableOpacity, TextInput, StyleSheet, AsyncStorage} from 'react-native'
+import Receipt from "./Receipt";
 
 const client = require('./Utilities/client');
 
@@ -7,7 +8,8 @@ class InputSubmitOrder extends Component {
     state = {
         carText: '',
         pickUpTime: '',
-        shouldShowActivityIndicator: false
+        shouldShowActivityIndicator: false,
+        orderTotal: 0
     };
 
     static async getUsername() {
@@ -33,7 +35,7 @@ class InputSubmitOrder extends Component {
     };
 
     navigateToReceipt = () => {
-        this.props.navigation.navigate("Receipt", {cart: this.props.cart});
+        this.props.navigation.navigate("Receipt", {orderTotal: this.state.orderTotal, cart: this.props.cart, paymentType: this.props.paymentType});
     };
 
     login = () => {
@@ -44,6 +46,7 @@ class InputSubmitOrder extends Component {
             orderTotal += cart[i].price;
             menuItems.push(cart[i].name);
         }
+        this.setState({orderTotal: orderTotal});
 
         InputSubmitOrder.getUsername()
             .then((username) => {

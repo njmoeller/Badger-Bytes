@@ -44,8 +44,8 @@ class Receipt extends React.Component {
                                 ))
                             }
                         <View style={styles.receiptContainer}>
-                            <Text style={styles.receipt}>Total Amount: </Text> 
-                            <Text style={styles.receipt}>Payment Method: </Text>
+                            <Text style={styles.receipt}>Total Amount: ${this.props.route.params.orderTotal}</Text>
+                            <Text style={styles.receipt}>Payment Method: {this.props.route.params.paymentType}</Text>
 
                         </View>
                         </ScrollView>
