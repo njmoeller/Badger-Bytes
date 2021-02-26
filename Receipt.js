@@ -119,7 +119,7 @@ const styles = StyleSheet.create({
 
     receiptContainer: {
         width: '100%',
-        height: '20%',
+        height: 75,
         backgroundColor: 'white'
     },
 
