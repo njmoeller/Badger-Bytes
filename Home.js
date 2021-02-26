@@ -3,12 +3,12 @@ import {ImageBackground, StyleSheet, Text, View, Image} from "react-native";
 import ButtonWithBackground from "./button";
 import {StatusBar} from "expo-status-bar";
 
+// Home Screen which includes Login and SignUp Buttons
 class Home extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
         return (
             <View style={styles.container}>
-
                 <View style={styles.carContainer}>
 
                     <ImageBackground
@@ -26,7 +26,6 @@ class Home extends React.Component {
                         style={styles.crest}
                     />
 
-
                     <View style={styles.button1}>
                         <ButtonWithBackground onPress={() => {navigate('Login')}} text='Login' color='#d12a3b' />
                     </View>
@@ -34,9 +33,6 @@ class Home extends React.Component {
                     <View style={styles.button2}>
                         <ButtonWithBackground onPress={() => {navigate('Signup')}} text='Sign Up' color='#d12a3b' />
                     </View>
-
-
-
                 </View>
                 <StatusBar style="auto" />
             </View>
@@ -44,6 +40,7 @@ class Home extends React.Component {
     }
 }
 
+// Formatting
 const styles = StyleSheet.create({
     container: {
         flex: 1,

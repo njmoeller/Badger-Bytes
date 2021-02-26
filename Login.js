@@ -3,18 +3,18 @@ import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, ScrollView, FlatList } from 'react-native';
 import InputLogin from './InputLogin.js'
 
+// Displays Login Screen
 export default class Login extends React.Component {
   render() {
-    return (
-      
+    return (  
         <View style={styles.container}>
-
           <View style={styles.carContainer}>
-
-            <ImageBackground
+ 
+            <ImageBackground 
                 source={require('./assets/HomeScreen.png')}
                 style={styles.image}
             />
+
             <ScrollView>
               <View style={styles.titles}>
                 <Text style={styles.title}>Badger Bytes</Text>
@@ -29,13 +29,14 @@ export default class Login extends React.Component {
             </ScrollView>
           </View>
           <StatusBar style="auto" />
+          
         </View>
       
     );
   }
 }
 
-
+// Formatting
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -50,7 +51,6 @@ const styles = StyleSheet.create({
   },
 
   titles: {
-    //marginTop: '10%',
     width: '100%',
     alignItems: 'center',
     backgroundColor: '#d12a3b'
@@ -87,6 +87,4 @@ const styles = StyleSheet.create({
     color: 'white',
     marginTop: 27
   }
-
-
 });

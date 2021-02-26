@@ -4,6 +4,7 @@ import Receipt from "./Receipt";
 
 const client = require('./Utilities/client');
 
+// Handles submit order text field data and communciates to backend
 class InputSubmitOrder extends Component {
     state = {
         carText: '',
@@ -100,6 +101,7 @@ class InputSubmitOrder extends Component {
 
 export default InputSubmitOrder
 
+// Formatting
 const styles = StyleSheet.create({
     container: {
         paddingTop: 5

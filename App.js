@@ -12,6 +12,7 @@ import Receipt from './Receipt';
 
 const Stack = createStackNavigator();
 
+// Runs the application and includes each screen used for navigation
 export default function App() {
   return (
       <NavigationContainer>

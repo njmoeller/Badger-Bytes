@@ -4,6 +4,7 @@ import ButtonWithBackground from "./button";
 import {StatusBar} from "expo-status-bar";
 import InputSubmitOrder from "./InputSubmitOrder";
 
+// Submit Order Screen which includes the users ability to define their car make and model as well as pickup time
 class SubmitOrder extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
@@ -39,6 +40,7 @@ class SubmitOrder extends React.Component {
 
 export default SubmitOrder
 
+// Formatting
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -53,7 +55,6 @@ const styles = StyleSheet.create({
     },
 
     titles: {
-        //marginTop: '10%',
         width: '100%',
         alignItems: 'center',
         backgroundColor: '#d12a3b'
@@ -91,5 +92,4 @@ const styles = StyleSheet.create({
         color: 'white',
         marginTop: 27
     }
-
 });

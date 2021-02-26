@@ -4,15 +4,17 @@ import ButtonWithBackground from "./button";
 import {StatusBar} from "expo-status-bar";
 
 class Checkout extends React.Component {
+    
+    // Navigates to Submit Order
     moveToSubmitOrder = (paymentType) => {
         this.props.navigation.navigate('SubmitOrder', { cart: this.props.route.params.cart, paymentType: paymentType })
     };
 
 
+    // Checkout Screen which includes four payment options
     render() {
         return (
             <View style={styles.container}>
-
                 <View style={styles.carContainer}>
 
                     <ImageBackground
@@ -28,7 +30,6 @@ class Checkout extends React.Component {
                     <View style={styles.importantText}>
                         <Text style={styles.instruction}>Select Your Payment Method</Text>
                     </View>
-
 
                     <View style={styles.buttons}>
                         <ButtonWithBackground onPress={() => this.moveToSubmitOrder("Credit Card")} text='Credit Card' color='#d12a3b' />
@@ -53,6 +54,7 @@ class Checkout extends React.Component {
     }
 }
 
+// Formatting
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -78,7 +80,6 @@ const styles = StyleSheet.create({
     },
 
     titles: {
-       // marginTop: '10%',
         width: '100%',
         alignItems: 'center',
         backgroundColor: '#d12a3b'

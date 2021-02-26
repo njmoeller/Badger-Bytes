@@ -3,6 +3,7 @@ import {ActivityIndicator, View, Text, TouchableOpacity, TextInput, StyleSheet, 
 
 const client = require('./Utilities/client');
 
+// Handles text field data from the home page and communicates to backend
 class Inputs extends Component {
     state = {
         username: '',
@@ -57,9 +58,6 @@ class Inputs extends Component {
                     .then(() => {
                         this.navigateToMenu();
                     });
-
-                // At this point, we will want to move the user to the main part of the app
-                // Not sure how to change screens in react native but I'm sure we'll figure it out
             })
             .catch((error) => {
                 this.removeActivityIndicator();
@@ -118,6 +116,7 @@ class Inputs extends Component {
 
 export default Inputs
 
+// Formatting
 const styles = StyleSheet.create({
     container: {
         paddingTop: 5

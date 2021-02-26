@@ -3,6 +3,7 @@ import {Image, ImageBackground, ScrollView, StyleSheet, Text, View} from "react-
 import ButtonWithBackground from "./button";
 import {StatusBar} from "expo-status-bar";
 
+// Displays items selected from menu on cart screeen
 class Cart extends React.Component {
     render() {
         const { navigate } = this.props.navigation;
@@ -31,13 +32,12 @@ class Cart extends React.Component {
                                 </View>
                             ))
                         }
-                        <View style={styles.button1}>
+                        
+                        <View style={styles.button1}> 
                             <ButtonWithBackground onPress={() => {navigate('Checkout', { cart: this.props.route.params.cart })}} text='Checkout' color='#d12a3b' />
                         </View>
 
                     </ScrollView>
-
-
                 </View>
                 <StatusBar style="auto" />
             </View>
@@ -45,6 +45,7 @@ class Cart extends React.Component {
     }
 }
 
+// Formatting
 const styles = StyleSheet.create({
     item: {
         flexDirection: 'row',
@@ -69,7 +70,6 @@ const styles = StyleSheet.create({
     },
 
     titles: {
-       // marginTop: '10%',
         width: '100%',
         alignItems: 'center',
         backgroundColor: '#d12a3b'

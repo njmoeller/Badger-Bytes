@@ -3,7 +3,7 @@ import {Text, StyleSheet, ScrollView, View, Image, ImageBackground, ActivityIndi
 import ButtonWithBackground from "./button";
 const client = require('./Utilities/client');
 
-
+// Menu States
 class Menu extends React.Component {
     state = {
         names: [
@@ -14,10 +14,12 @@ class Menu extends React.Component {
         shouldShowActivityIndicator: false
     };
 
+    // Spinny wheel feature on and off
     removeActivityIndicator = () => {
         this.setState({shouldShowActivityIndicator: false});
     };
 
+    // Retreives menu items from our database using the backend API feature
     getMenuItems = () => {
         this.setState({shouldShowActivityIndicator: true});
         client.get('/api/menuItem/', {})
@@ -42,6 +44,7 @@ class Menu extends React.Component {
             });
     };
 
+    // Adds items to cart
     addItemToCart = (itemName) => {
         let itemToAdd = {};
         for(let i=0; i<this.state.names.length; i++) {
@@ -55,15 +58,18 @@ class Menu extends React.Component {
         alert(itemName + " successfully added to cart.")
     };
 
+    // Navigates to the cart screen
     moveToCart = (navigate) => {
         navigate('Cart', {cart: this.state.cart});
     };
 
+    // Displays menu items
     componentDidMount() {
         this.setState({shouldShowActivityIndicator: true});
         this.getMenuItems()
     }
 
+    // Menu screen implementation
     render() {
         const { navigate } = this.props.navigation;
         return(
@@ -80,8 +86,9 @@ class Menu extends React.Component {
                         <Text style={styles.subtitle}>Get Your Grub On</Text>
                     </View>      
                     
+                    
                     <ScrollView>
-                        {
+                        { 
                             this.state.names.map((item, index) => (
                                 <View key = {item.name} style = {styles.item}>
                                     <View>
@@ -107,6 +114,7 @@ class Menu extends React.Component {
 
 export default Menu
 
+// Formatting
 const styles = StyleSheet.create({
     item: {
         flexDirection: 'row',
@@ -142,7 +150,6 @@ const styles = StyleSheet.create({
     },
 
     titles: {
-        // marginTop: '10%',
          width: '100%',
          alignItems: 'center',
          backgroundColor: '#d12a3b'
@@ -160,5 +167,4 @@ const styles = StyleSheet.create({
          color: 'white',
          fontWeight: '700'
      },
-
 });

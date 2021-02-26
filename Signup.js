@@ -3,6 +3,7 @@ import React from 'react';
 import { StyleSheet, Text, View, ImageBackground, ScrollView } from 'react-native';
 import Input from './Input.js'
 
+// SignUp Screen which includes four text fields: username, password, phone number and address
 export default class Signup extends React.Component {
   render() {
     return (
@@ -31,13 +32,12 @@ export default class Signup extends React.Component {
           
         </View>
         <StatusBar style="auto" />
-      </View>
-     
+      </View>    
     );
   }
 }
 
-
+// Formatting
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -52,7 +52,6 @@ const styles = StyleSheet.create({
   },
 
   titles: {
-    //marginTop: '10%',
     width: '100%',
     alignItems: 'center',
     backgroundColor: '#d12a3b'
@@ -89,6 +88,4 @@ const styles = StyleSheet.create({
     color: 'white',
     marginTop: 27
   }
-
-
 });

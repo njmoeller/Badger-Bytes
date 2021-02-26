@@ -4,12 +4,7 @@ import {StatusBar} from "expo-status-bar";
 
 class Receipt extends React.Component {
 
-
-    moveToSubmitOrder = () => {
-        this.props.navigation.navigate('SubmitOrder', { cart: this.props.route.params.cart })
-    };
-
-
+    // Receipt page displays the items ordered along with total amount and payment method
     render() {
         const { navigate } = this.props.navigation;
         return (
@@ -28,7 +23,7 @@ class Receipt extends React.Component {
                     </View>
 
                     <View style={styles.importantText}>
-                        <Text style={styles.instruction}>Thank You For Shopping With Badger Bytes!</Text>
+                        <Text style={styles.instruction}>Thank You for Shopping with Badger Bytes!</Text>
                         <Text style={styles.instruction}>Your Receipt</Text>
                     </View>
 
@@ -58,6 +53,7 @@ class Receipt extends React.Component {
     }
 }
 
+// Formatting
 const styles = StyleSheet.create({
     container: {
         flex: 1,
@@ -77,7 +73,6 @@ const styles = StyleSheet.create({
     },
 
     titles: {
-        //marginTop: '10%',
         width: '100%',
         alignItems: 'center',
         backgroundColor: '#d12a3b'
